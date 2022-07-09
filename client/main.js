@@ -39,13 +39,20 @@ const addFortune = () =>
     }
     lastFort++;
     axios.post(`${baseUrl}fortune`, obj)
+    console.log(fortune)
 }
 
 const deleteFortune = () =>
 {
     axios.delete(`${baseUrl}fortune/:${lastFort}`)
 
-    .then(res => console.log(res), lastFort--); 
+    .then(res => 
+        {
+        console.log(res);
+        lastFort--;
+        })
+    
+    
 }
 
 

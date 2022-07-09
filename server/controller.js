@@ -33,7 +33,7 @@ module.exports = {
 
     postFortune: (req, res) =>
     {
-        console.log(req.body)
+        console.log(req.data)
 
         fortunes.push(req.body.fortune)
 
