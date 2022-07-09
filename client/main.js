@@ -6,6 +6,7 @@ const fortForm = document.querySelector(`#fortForm`);
 const baseUrl = "http://localhost:4000/api/";
 let lastFort = 0;
 
+//returns an alert with a random compliment
 const getCompliment = () => {
     axios.get(`${baseUrl}compliment`)
         .then(res => {
@@ -13,6 +14,7 @@ const getCompliment = () => {
             alert(data);
     });
 };
+//returns an alert with a random fortune
 const getFortune = () => {
     axios.get(`${baseUrl}fortune`)
         .then(res => {
@@ -20,7 +22,7 @@ const getFortune = () => {
             alert(data);
     });
 };
-
+//adds another compliment user can get
 const addCompliment = () => 
 {   
     let compliment = document.querySelector(`#compliment`)
@@ -30,6 +32,8 @@ const addCompliment = () =>
     }
     axios.post(`${baseUrl}compliment`, obj)
 }
+
+//adds another fortune user can get
 const addFortune = () => 
 {   
     let fortune = document.querySelector(`#fortune`)
@@ -41,7 +45,7 @@ const addFortune = () =>
     axios.post(`${baseUrl}fortune`, obj)
     console.log(fortune)
 }
-
+//removes last fortune added
 const deleteFortune = () =>
 {
     axios.delete(`${baseUrl}fortune/:${lastFort}`)
