@@ -33,7 +33,7 @@ const addCompliment = () =>
     axios.post(`${baseUrl}compliment`, obj)
 }
 
-//adds another fortune user can get
+//adds/updates fortune user can get
 const addFortune = () => 
 {   
     let fortune = document.querySelector(`#fortune`)
@@ -42,7 +42,7 @@ const addFortune = () =>
      fortune: fortune.value
     }
     lastFort++;
-    axios.post(`${baseUrl}fortune`, obj)
+    axios.put(`${baseUrl}fortune`, obj)
     console.log(fortune)
 }
 //removes last fortune added
